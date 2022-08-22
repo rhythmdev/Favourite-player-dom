@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Manrope:wght@300;400;600;700;800&display=swap");
+
+/* font-family: 'Berkshire Swash', cursive;
+
+font-family: 'Manrope', sans-serif; */
+
+header {
+  width: 1440px;
+  height: 481px;
+  background-color: #000000;
+}
+
+h1 {
+  font-family: "Berkshire Swash", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4.0625rem;
+
+  text-align: center;
+  text-transform: capitalize;
+  width: 683px;
+  height: 94px;
+  color: #ff5e19;
+}
+h5 {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 30px;
+  font-family: "Manrope", sans-serif;
+  color: #ffffff;
+}
+h6 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Manrope", sans-serif;
+  color: #b3b3b3;
+}
+.select-btn {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  background: #015196;
+  color: #ffffff;
+  border: none;
+  padding: 5px 30px;
+}
+.calculate-button {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  background: #015196;
+  color: #ffffff;
+  border: none;
+  padding: 7px 45px;
+}
+.card {
+  background-color: #000000;
+}
+.select-area {
+  width: 264px;
+  height: 371px;
+  background: #0d0d0d;
+}
+.budget-area {
+  width: 264px;
+  height: 514px;
+  background: #0d0d0d;
+}
+input {
+  outline: none;
+  border: 1px solid #fff;
+}
+.total {
+  color: #ff5e19;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
