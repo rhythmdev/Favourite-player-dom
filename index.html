@@ -41,7 +41,7 @@
   <main class="container-fluid bg-dark ">
     <div class="container">
       <div class="row">
-        <div class="col-lg-7 mt-5">
+        <div class="col-lg-7 col-md-7 mt-5">
           <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
               <div class="card">
@@ -145,7 +145,7 @@
           </div>
 
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-md-5">
 
           <div class="row mt-5 d-flex justify-content-center align-items-center">
             <!-- selected area -->
@@ -167,7 +167,11 @@
 
               <!-- calculate total area -->
               <div class="mt-4 ">
-                <h6>Player Expenses $<span>0</span></h6>
+                <div class="d-flex justify-content-evenly">
+                  <h6>Player Expenses</h6>
+                  <h6 class="total">$<span>0</span></h6>
+                </div>
+
                 <div class="calculate-total-area d-flex justify-content-center align-items-center  my-3">
                   <h6 class="me-3">Manager</h6>
                   <input type="text" class="w-50 bg-dark text-white outline-none ">
@@ -197,7 +201,9 @@
     </div>
     </div>
   </main>
-
+  <footer class="container-fluid text-center bg-dark p-5">
+    <h6>Copyright @ 2022 All Rights Reserved.</h6>
+  </footer>
 
 
 
