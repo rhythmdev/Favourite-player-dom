@@ -32,25 +32,34 @@ function selectPlayer(element) {
     display(playerCart);
   }
 
-  // document.getElementById('total-added-player').innerText = playerCart.length;
+   document.getElementById('total-added-player').innerText = playerCart.length;
 }
 
 //** calculate area */
 
 document.getElementById("calculate-btn").addEventListener("click", function () {
-  
-  
   const perPlayerBudget = getInputFieldById("per-player");
-  const playerSelected = document.querySelectorAll('#selected-player li');
-
+  const playerSelected = document.querySelectorAll("#selected-player li");
   const totalPlayerExpenses = playerSelected.length * perPlayerBudget;
-  console.log(totalPlayerExpenses);
 
- const playerExpenses = document.getElementById('player-expenses');
- playerExpenses.innerText = totalPlayerExpenses;
-  
+  const playerExpenses = getElementValueById("player-expenses");
+ 
 
-
-
+  setElementValueById("player-expenses", totalPlayerExpenses);
 });
 
+document
+  .getElementById("total-calculate-btn")
+  .addEventListener("click", function () {
+    const managerExpenses = getInputFieldById("manager-expense");
+    const coachExpenses = getInputFieldById("coach-expense");
+
+    const playerTotalExpense = getElementValueById("player-expenses");
+    
+
+    const totalCost = playerTotalExpense + managerExpenses + coachExpenses;
+
+    const finalTotal = getElementValueById("total-cost");
+   
+    setElementValueById("total-cost", totalCost);
+  });
