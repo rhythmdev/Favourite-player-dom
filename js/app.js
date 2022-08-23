@@ -5,20 +5,16 @@ function display(addPlayer) {
   olBody.innerHTML = "";
   for (let i = 0; i < addPlayer.length; i++) {
     // console.log(addPlayer[i].playerN{ame)
-    let childrenNode = olBody.children.length;
-    if (childrenNode >= 5) {
-      alert("You can select max 5 players");
-      return;
-    } else {
-      const name = addPlayer[i].playerName;
-      const li = document.createElement("li");
+    let childrenNode = olBody.childNodes.length;
 
-      li.innerText = name;
+    const name = addPlayer[i].playerName;
+    const li = document.createElement("li");
 
-      olBody.appendChild(li);
-      li.style.color = "white";
-      li.style.textAlign = "center";
-    }
+    li.innerText = name;
+
+    olBody.appendChild(li);
+    li.style.color = "white";
+    li.style.textAlign = "center";
   }
 }
 
@@ -28,15 +24,33 @@ function selectPlayer(element) {
   const playerObj = {
     playerName: playerName,
   };
-  playerCart.push(playerObj);
+  if (playerCart.length >= 5) {
+    alert("You can select max 5 players");
+    return;
+  } else {
+    playerCart.push(playerObj);
+    display(playerCart);
+  }
 
   // document.getElementById('total-added-player').innerText = playerCart.length;
-  display(playerCart);
 }
 
 //** calculate area */
 
-
-document.getElementById('calculate-btn').addEventListener('click', function(){
+document.getElementById("calculate-btn").addEventListener("click", function () {
   
-})
+  
+  const perPlayerBudget = getInputFieldById("per-player");
+  const playerSelected = document.querySelectorAll('#selected-player li');
+
+  const totalPlayerExpenses = playerSelected.length * perPlayerBudget;
+  console.log(totalPlayerExpenses);
+
+ const playerExpenses = document.getElementById('player-expenses');
+ playerExpenses.innerText = totalPlayerExpenses;
+  
+
+
+
+});
+

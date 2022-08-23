@@ -150,7 +150,7 @@
             <div class="select-area text-center pt-3">
               <h5>Favorites <span id="total-added-player">V</span></h5>
               <img src="./images/Ureg-Ureg Marker.png" class="img-fluid mb-3">
-           
+
               <ol id="selected-player">
 
               </ol>
@@ -162,7 +162,7 @@
               <img src="./images/Ureg-Ureg Marker.png" class="img-fluid mb-3">
               <div class="calculate-area d-flex justify-content-center align-items-center my-3">
                 <h6 class="me-3">Per Player</h6>
-                <input type="text" class="w-50 bg-dark text-white outline-none ">
+                <input type="text" id="per-player" class="w-50 bg-dark text-white outline-none ">
 
               </div>
               <button id="calculate-btn" class="calculate-button mt-4">Calculate</button>
@@ -171,7 +171,7 @@
               <div class="mt-4 ">
                 <div class="d-flex justify-content-evenly">
                   <h6>Player Expenses</h6>
-                  <h6 class="total">$<span>0</span></h6>
+                  <h6 class="total">$<span id="player-expenses">00</span></h6>
                 </div>
 
                 <div class="calculate-total-area d-flex justify-content-center align-items-center  my-3">
@@ -184,7 +184,7 @@
                   <input type="text" class="w-50 bg-dark text-white outline-none ">
 
                 </div>
-                <button class="calculate-button mt-4">Calculate Total</button>
+                <button id="total-calculate-btn" class="calculate-button mt-4">Calculate Total</button>
                 <div class="d-flex justify-content-around mt-3">
                   <h6>Total</h6>
                   <h6 class="total">$<span>0</span></h6>
