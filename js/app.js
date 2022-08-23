@@ -4,9 +4,7 @@ function display(addPlayer) {
   const olBody = document.getElementById("selected-player");
   olBody.innerHTML = "";
   for (let i = 0; i < addPlayer.length; i++) {
-    // console.log(addPlayer[i].playerN{ame)
-    // let childrenNode = olBody.childNodes.length;
-
+    
     const name = addPlayer[i].playerName;
     const li = document.createElement("li");
 
@@ -19,8 +17,6 @@ function display(addPlayer) {
 }
 
 function selectPlayer(element) {
-  element.setAttribute("disabled", true);
-  element.style.backgroundColor = "gray";
   const playerName = element.parentNode.parentNode.children[0].innerText;
 
   const playerObj = {
@@ -30,6 +26,8 @@ function selectPlayer(element) {
     alert("You can select max 5 players");
     return;
   } else {
+    element.setAttribute("disabled", true);
+    element.style.backgroundColor = "gray";
     playerCart.push(playerObj);
     display(playerCart);
   }

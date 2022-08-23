@@ -36,6 +36,11 @@ h6 {
   font-family: "Manrope", sans-serif;
   color: #b3b3b3;
 }
+.banner-area {
+  background-image: url("./images/banner-image.png");
+
+  object-fit: cover;
+}
 .select-btn {
   font-family: "Manrope";
   font-style: normal;
