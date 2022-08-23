@@ -5,7 +5,7 @@ function display(addPlayer) {
   olBody.innerHTML = "";
   for (let i = 0; i < addPlayer.length; i++) {
     // console.log(addPlayer[i].playerN{ame)
-    let childrenNode = olBody.childNodes.length;
+    // let childrenNode = olBody.childNodes.length;
 
     const name = addPlayer[i].playerName;
     const li = document.createElement("li");
@@ -19,6 +19,8 @@ function display(addPlayer) {
 }
 
 function selectPlayer(element) {
+  element.setAttribute("disabled", true);
+  element.style.backgroundColor = "gray";
   const playerName = element.parentNode.parentNode.children[0].innerText;
 
   const playerObj = {
@@ -32,18 +34,24 @@ function selectPlayer(element) {
     display(playerCart);
   }
 
-   document.getElementById('total-added-player').innerText = playerCart.length;
+  document.getElementById("total-added-player").innerText = playerCart.length;
 }
 
 //** calculate area */
 
 document.getElementById("calculate-btn").addEventListener("click", function () {
   const perPlayerBudget = getInputFieldById("per-player");
+  //! error message //
+  if (isNaN(perPlayerBudget) || perPlayerBudget < 0) {
+    alert("Please enter a valid number");
+    return;
+  }
+  //! end of error message //
+
   const playerSelected = document.querySelectorAll("#selected-player li");
   const totalPlayerExpenses = playerSelected.length * perPlayerBudget;
 
   const playerExpenses = getElementValueById("player-expenses");
- 
 
   setElementValueById("player-expenses", totalPlayerExpenses);
 });
@@ -54,12 +62,23 @@ document
     const managerExpenses = getInputFieldById("manager-expense");
     const coachExpenses = getInputFieldById("coach-expense");
 
+    //! error message //
+    if (
+      isNaN(managerExpenses) ||
+      isNaN(coachExpenses) ||
+      managerExpenses < 0 ||
+      coachExpenses < 0
+    ) {
+      alert("Please enter a valid number");
+      return;
+    }
+    //! end of error message //
+
     const playerTotalExpense = getElementValueById("player-expenses");
-    
 
     const totalCost = playerTotalExpense + managerExpenses + coachExpenses;
 
     const finalTotal = getElementValueById("total-cost");
-   
+
     setElementValueById("total-cost", totalCost);
   });
